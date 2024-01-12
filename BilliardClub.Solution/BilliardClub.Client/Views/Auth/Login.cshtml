@@ -1,0 +1,62 @@
+﻿@model LoginViewModel;
+
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a asp-action="Index" asp-controller="Home"><i class="fa fa-home"></i> Trang chủ</a>
+                    <span>Đăng nhập</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+     data-sidebar-position="fixed" data-header-position="fixed">
+    <div class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center w-100">
+            <div class="row justify-content-center w-100">
+                <div class="col-md-8 col-lg-6 col-xxl-3">
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <div class="logo text-center mt-3 mb-3">
+                                <h2 class="font-weight-bold">ĐĂNG NHẬP THÀNH VIÊN</h2>
+                            </div>
+                            <form method="POST" asp-action="Login" asp-controller="Auth">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label text-uppercase font-weight-bold">Tài khoản</label>
+                                    <input type="text" asp-for="Username" class="form-control" autocomplete="off" required id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label text-uppercase font-weight-bold">Mật khẩu</label>
+                                    <input type="password" asp-for="Password" class="form-control" autocomplete="off" required id="exampleInputPassword1">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input primary" type="checkbox" value="" id="flexCheckChecked">
+                                        <label class="form-check-label text-dark" for="flexCheckChecked">
+                                            Ghi nhớ tài khoản
+                                        </label>
+                                    </div>
+                                    <a class="text-primary fw-bold" href="./index.html">Quên mật khẩu ?</a>
+                                </div>
+                                <input type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" value="Đăng nhập" />
+                            </form>
+                            <div class="text-center ">
+                                <h6 class="font-weight-bold mb-3">Chưa có tài khoản thành viên? <a asp-action="Register" asp-controller="Auth">Đăng ký ngay ?</a></h6>
+                                <h6 class="font-weight-bold mb-3">Hoặc:</h6>
+                                <a asp-action="GoogleLogin" asp-controller="Auth">
+                                    <button class="btn btn-danger w-100 py-8 fs-4 mb-4 rounded-2"><i class="fa fa-google-plus"></i> Đăng nhập với tài khoản Google</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

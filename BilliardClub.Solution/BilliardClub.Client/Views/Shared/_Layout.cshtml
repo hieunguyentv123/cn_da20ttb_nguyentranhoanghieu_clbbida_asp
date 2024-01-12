@@ -1,0 +1,203 @@
+﻿
+@{
+    string? clientName = Context.Session.GetString("clientName");
+    string? token = Context.Session.GetString("clientToken");
+    string? clientAvatar = Context.Session.GetString("clientAvatar");
+}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="84 Billiard">
+    <meta name="keywords" content="Ashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>84 Billiard Club</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" type="text/css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" type="text/css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/elegant-icons.css" type="text/css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/jquery-ui.min.css" type="text/css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/magnific-popup.css" type="text/css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css" type="text/css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/slicknav.min.css" type="text/css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/style.css" type="text/css" asp-append-version="true">
+    <link rel="shortcut icon" type="image/png" href="~/icon.ico" asp-append-version="true" />
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__close">+</div>
+        <div class="offcanvas__logo">
+            <a asp-action="Index" asp-controller="Home"><h4 class="font-weight-bold">84BILLIARD</h4></a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Offcanvas Menu End -->
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3">
+                    <div class="header__logo">
+                        <a asp-action="Index" asp-controller="Home"><h2 class="font-weight-bold">84BILLIARD</h2></a>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a asp-action="Index" asp-controller="Home">Trang chủ</a></li>
+                            <li>
+                                <a asp-action="Index" asp-controller="Article">Bài viết & sự kiện</a>
+                                <ul class="dropdown">
+                                    @foreach (var item in ViewBag.ArticleCategories)
+                                    {
+                                        <li><a asp-action="Index" asp-controller="Article" asp-route-category="@item.ArticleCatId">@item.ArticleCatName</a></li>
+                                    }
+                                </ul>
+                            </li>
+                            <li>
+                                <a asp-action="Index" asp-controller="Product">Sản phẩm</a>
+                                <ul class="dropdown">
+                                    @foreach (var item in ViewBag.ProductCategories)
+                                    {
+                                        <li><a asp-action="Index" asp-controller="Product" asp-route-category="@item.CategoryId">@item.CategoryName</a></li>
+                                    }
+                                </ul>
+                            </li>
+                            <li><a asp-action="Index" asp-controller="Contact">Liên hệ</a></li>
+                            <li><a asp-action="Index" asp-controller="Cart">Giỏ hàng</a></li>
+                            @if (String.IsNullOrEmpty(token))
+                            {
+                                <li><a asp-action="Login" asp-controller="Auth">Đăng nhập / Đăng ký</a></li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="#">
+                                        @if (!String.IsNullOrEmpty(clientAvatar))
+                                        {
+                                            <img src="@("/uploads/avatar/" + @clientAvatar)" alt="" width="50" height="50" class="rounded-circle">
+                                        }
+                                        else
+                                        {
+                                            <img src="~/img/user-1.jpg" alt="" width="50" height="50" class="rounded-circle">
+                                        }
+                                    </a>
+                                    <ul class="dropdown">
+                                        <li><a asp-action="Index" asp-controller="Profile">Thông tin của tôi</a></li>
+                                        <li><a asp-action="Index" asp-controller="OrderHistory">Lịch sử mua hàng</a></li>
+                                        <li><a asp-action="ChangePassword" asp-controller="Profile">Đổi mật khẩu</a></li>
+                                        <li><a asp-action="Logout" asp-controller="Auth">Đăng xuất</a></li>
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <div class="container">
+        <main role="main" class="mt-3 pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-7">
+                    <div class="footer__about" style="display:flex; justify-content:center; align-items:center;">
+                        <div class="footer__logo">
+                            <a asp-action="Index" asp-controller="Home"><h2 class="font-weight-bold">84BILLIARD</h2></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-4">
+                    <div class="footer__widget">
+                        <h6>Danh mục</h6>
+                        <ul>
+                            <li><a asp-action="Index" asp-controller="Article"><h6>Bài viết & sự kiện</h6></a></li>
+                            <li><a asp-action="Index" asp-controller="Product"><h6>Sản phẩm</h6></a></li>
+                            <li><a asp-action="Index" asp-controller="Contact"><h6>Liên hệ</h6></a></li>
+                            <li><a asp-action="Index" asp-controller="Cart"><h6>Giỏ hàng</h6></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-8">
+                    <div class="footer__widget">
+                        <h6>Địa chỉ câu lạc bộ - Hỗ trợ 24/7</h6>
+                        <ul>
+                            @foreach (var item in ViewBag.ContactInformations)
+                            {
+                                <li><h6><span class="fa fa-map-marker"></span> @item.Address</h6></li>
+                                <li><h6><span class="fa fa-phone"></span> @item.Phone</h6></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <div class="footer__copyright__text">
+                        <p>
+                            Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> 84 Billiard Club. All Rights Reserved
+                        </p>
+                    </div>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+    <!-- Js Plugins -->
+    <script src="~/js/jquery-3.3.1.min.js" asp-append-version="true"></script>
+    <script src="~/js/bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.magnific-popup.min.js" asp-append-version="true"></script>
+    <script src="~/js/jquery-ui.min.js" asp-append-version="true"></script>
+    <script src="~/js/mixitup.min.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.countdown.min.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.slicknav.js" asp-append-version="true"></script>
+    <script src="~/js/owl.carousel.min.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.nicescroll.min.js" asp-append-version="true"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    @await Component.InvokeAsync("Notyf")
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

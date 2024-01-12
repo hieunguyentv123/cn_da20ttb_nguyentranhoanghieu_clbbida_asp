@@ -1,0 +1,220 @@
+﻿@model Product;
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a asp-action="Index" asp-controller="Product"><i class="fa fa-home"></i> Sản phẩm</a>
+                    <a asp-action="Index" asp-controller="Product" asp-route-category="@Model.CategoryId">@Model.ProductCategory.CategoryName</a>
+                    <span>@Model.ProductName</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- Product Details Section Begin -->
+<section class="product-details spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="@("/uploads/product/" + Model.ProductImage)">
+                        <ul class="product__hover">
+                            <li><a href="@("/uploads/product/" + Model.ProductImage)" class="image-popup"><span class="arrow_expand"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="product__details__text">
+                    <h3>@Model.ProductName <span>Danh mục: <a asp-action="Index" asp-controller="Product" asp-route-category="@Model.CategoryId">@Model.ProductCategory.CategoryName</a></span></h3>
+                    <div class="rating">
+                        <span>( @ViewData["ReviewsCount"] đánh giá )</span>
+                    </div>
+                    @if (Model.DiscountPercent > 0 && Model.DiscountPercent <= 100)
+                    {
+                        <div class="product__details__price">@((Model.Price / 100 * (100 - Model.DiscountPercent)).ToString("n0"))đ <span>@(Model.Price.ToString("n0"))đ</span></div>
+                    }
+                    else
+                    {
+                        <div class="pproduct__details__price">@(Model.Price.ToString("n0"))đ</div>
+                    }
+                    <div class="product__details__button">
+                        @if (Model.Stock == 0)
+                        {
+                            <div class="label stockout">Sản phẩm đã hết hàng.</div>
+                        }
+                        else
+                        {
+                            <form asp-action="AddToCart" asp-controller="Product" method="get">
+                                <div class="quantity">
+                                    <span>Số lượng:</span>
+                                    <div>
+                                        <input type="number" min="1" max="@Model.Stock" class="form-control" name="quantity" value="1">
+                                        <input type="number" name="productId" value="@Model.ProductId" hidden>
+                                    </div>
+                                </div>
+                                <br />
+                                <button class="cart-btn"><span class="icon_bag_alt"></span> Thêm vào giỏ hàng</button>
+                            </form>
+                        }
+                    </div>
+                    <div class="product__details__widget">
+                        <ul>
+                            <li>
+                                <span>Số lượng tồn:</span>
+                                <p>@Model.Stock sản phẩm</p>
+                            </li>
+                            @if (Model.DiscountPercent > 0 && Model.DiscountPercent <= 100)
+                            {
+                                <li class="text-danger">
+                                    <span>Khuyến mãi:</span>
+                                    <p>Giảm @Model.DiscountPercent%</p>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="product__details__tab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Chi tiết sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Đánh giá sản phẩm ( @ViewData["ReviewsCount"] )</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                            <h6>Chi tiết sản phẩm @Model.ProductName</h6>
+                            <p>
+                                @Html.Raw(Model.ProductDetail.Replace(Environment.NewLine, "<br />"))
+                            </p>
+                        </div>
+                        <div class="tab-pane" id="tabs-2" role="tabpanel">
+                            <h6>Đánh giá sản phẩm ( @ViewData["ReviewsCount"] )</h6>
+                            @foreach (var item in ViewBag.Reviews)
+                            {
+                                <div class="row mb-3">
+                                    <div class="col-sm-1">
+                                        @if (!String.IsNullOrEmpty(item.User.AvatarPath))
+                                        {
+                                            <img src="@("/uploads/avatar/" + item.User.AvatarPath)" alt="" width="60" height="60" class="rounded-circle">
+                                        }
+                                        else
+                                        {
+                                            <img src="~/img/user-1.jpg" alt="" width="60" height="60" class="rounded-circle">
+                                        }
+                                    </div>
+                                    <div class="col-sm-11">
+                                        @if (item.ReviewBy == Context.Session.GetInt32("_id") || Context.Session.GetString("_role") == "Admin")
+                                        {
+                                            <div style="display:flex; float:right">
+                                                <a asp-action="DeleteReview" asp-controller="Product" asp-route-reviewId="@item.ReviewId" asp-route-productId="@item.ProductId"><i class="fa fa-times" style="color:red"></i></a>
+                                            </div>
+                                        }
+                                        <h6>@item.User.Fullname - <i class="fa fa-clock-o"></i><span>@item.ReviewAt.ToString("HH:mm dd/MM/yyyy")</span></h6>
+                                        <p>
+                                            @Html.Raw(item.Content.Replace(Environment.NewLine, "<br />"))
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                            <div class="row mt-3 mb-3">
+                                @{
+                                    if (!String.IsNullOrEmpty(Context.Session.GetString("_id")))
+                                    {
+                                        <div class="row justify-content-center w-100">
+                                            <div class="col-md-12 col-lg-12 col-xxl-12">
+                                                <div class="card mb-0">
+                                                    <div class="card-body">
+                                                        <div class="logo text-center mt-3 mb-3">
+                                                            <h4 class="font-weight-bold">Để lại đánh giá của bạn về sản phẩm nhé</h4>
+                                                        </div>
+                                                        <form method="POST" asp-action="Review" asp-controller="Product">
+                                                            <input type="number" asp-for="@Model.ProductId" name="productId" hidden />
+                                                            <div class="mb-3">
+                                                                <textarea name="content" class="form-control" placeholder="Cảm nghĩ của bạn về sản phẩm"></textarea>
+                                                            </div>
+                                                            <input type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" value="Gửi đánh giá" />
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="col-sm-12 text-center">
+                                            <h5>Hãy <a asp-action="Signup" asp-controller="Auth">đăng ký</a> hoặc <a asp-action="Login" asp-controller="Auth">đăng nhập</a> rồi để lại bình luận của bạn về sản phẩm nhé</h5>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="related__title">
+                    <h5>SẢN PHẨM CÙNG DANH MỤC</h5>
+                </div>
+            </div>
+            @foreach (var item in ViewBag.RelatedProducts)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="@("/uploads/product/" + item.ProductImage)">
+                            @if (item.Stock == 0)
+                            {
+                                <div class="label stockout">Đã hết hàng</div>
+
+                            }
+                            else if (item.CreatedAt.AddDays(30) >= DateTime.Now)
+                            {
+                                <div class="label new">Sản phẩm mới</div>
+                                @if (item.DiscountPercent > 0 && item.DiscountPercent <= 100)
+                                {
+                                    <div class="label sale mt-4">Giảm @item.DiscountPercent%</div>
+
+                                }
+                            }
+                            else
+                            {
+                                <div class="label sale">Giảm @item.DiscountPercent%</div>
+                            }
+                            <ul class="product__hover">
+                                <li><a href="@("/uploads/product/" + item.ProductImage)" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                <li><a asp-action="Details" asp-controller="Product" asp-route-id="@item.ProductId"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a asp-action="Details" asp-controller="Product" asp-route-id="@item.ProductId">@item.ProductName</a></h6>
+                            @if (item.DiscountPercent > 0 && item.DiscountPercent <= 100)
+                            {
+                                <div class="product__price">@string.Format("{0:0,0}", item.Price / 100 * (100 - item.DiscountPercent))đ <span>@string.Format("{0:0,0}", item.Price)đ</span></div>
+                            }
+                            else
+                            {
+                                <div class="product__price">@string.Format("{0:0,0}", item.Price)đ</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- Product Details Section End -->
+

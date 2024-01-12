@@ -1,0 +1,109 @@
+﻿@model IEnumerable<OrderDetail>;
+@{
+    ViewData["Title"] = "Đơn hàng";
+    ViewData["Action"] = "Thông tin chi tiết đơn hàng " + @Model.First().OrderId;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h4 mb-0">Thông tin đơn hàng: @Model.First().OrderId</h3>
+            <br />
+        </div>
+        <div class="card-body">
+            <h4 class="h4 mb-3">Thông tin vận chuyển</h4>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Họ & tên người nhận: </label>
+                <div class="col-sm-10">
+                    <p> @Model.First().Order.Fullname</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Địa chỉ nhận hàng: </label>
+                <div class="col-sm-10">
+                    <p>@Model.First().Order.Address</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Số điện thoại: </label>
+                <div class="col-sm-10">
+                    <p>@Model.First().Order.Phone</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Email: </label>
+                <div class="col-sm-10">
+                    <p>@Model.First().Order.Email</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Tin nhắn: </label>
+                <div class="col-sm-10">
+                    <p>@Model.First().Order.Note</p>
+                </div>
+            </div>
+            <h4 class="h4 mb-3">Thông tin thanh toán</h4>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Tổng tiền hàng: </label>
+                <div class="col-sm-10">
+                    @(Model.First().Order.TotalPrice.ToString("n0"))đ
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label"> Phương thức thanh toán: </label>
+                <div class="col-sm-10">
+                    @Model.First().Order.Payment.Method
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Tình trạng thanh toán: </label>
+                <div class="col-sm-10">
+                     @if (Model.First().Order.IsPaid)
+                    {
+                        <p class="text-success">Đã thanh toán</p>
+                    }
+                    else
+                    {
+                        <p class="text-danger">Chưa thanh toán</p>
+                    }
+                </div>
+            </div>
+            <h4 class="h4 mb-3">Chi tiết đơn hàng</h4>
+            <div class="row mb-3">
+                
+                <div class="table-respondsive">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Đơn giá</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                                <tr>
+                                    <td>
+                                        <img src="@("/uploads/product/" + item.Product.ProductImage)" height="100" width="100" alt="">
+                                        <div class="cart__product__item__title">
+                                            <h6>@item.Product.ProductName</h6>
+                                        </div>
+                                    </td>
+                                    <td>@(item.SinglePrice.ToString("n0"))</td>
+                                    <td>@item.Quantity </td>
+                                    <td>@((item.Quantity * item.SinglePrice).ToString("n0"))</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <a asp-action="Index" asp-controller="Order"><button class="btn btn-primary" type="reset">Trở về</button></a>
+        </div>
+    </div>
+</div>
+

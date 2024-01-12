@@ -1,0 +1,105 @@
+﻿@model User;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Quản trị viên";
+    ViewData["Action"] = "Chỉnh sửa thông tin";
+}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h4 mb-0">Chỉnh sửa thông tin quản trị viên</h3>
+            <div class="card-close">
+                <p class="mb-0 text-danger">* là thông tin bắt buộc</p>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" asp-action="Edit" asp-controller="Administrator" method="POST">
+                <div class="row" hidden>
+                    <label class="col-sm-2 form-label">UserId<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="UserId" required />
+                        <span asp-validation-for="UserId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row" hidden>
+                    <label class="col-sm-2 form-label">Tên tài khoản<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Username" required />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row" hidden>
+                    <label class="col-sm-2 form-label">Mật khẩu<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Password" required />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label">Họ & tên quản trị viên<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Fullname" required />
+                        <span asp-validation-for="Fullname" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label">Email<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Email" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label">Địa chỉ<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Address" required />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label">Số điện thoại<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Phone" required />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label">Ngày sinh<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control mb-3" asp-for="DOB" required />
+                        <span asp-validation-for="DOB" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row" hidden>
+                    <label class="col-sm-2 form-label">AvatarPath<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="AvatarPath" />
+                        <span asp-validation-for="AvatarPath" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row" hidden>
+                    <label class="col-sm-2 form-label">IsAdministrator<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="IsAdministrator" required />
+                        <span asp-validation-for="IsAdministrator" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row" hidden>
+                    <label class="col-sm-2 form-label">IsLocked<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="IsLocked" required />
+                        <span asp-validation-for="IsLocked" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 ms-auto">
+                        <button class="btn btn-warning" type="submit">Lưu thay đổi</button>
+                    </div>
+                </div>
+            </form>
+            <a asp-action="Index" asp-controller="Administrator"><button class="btn btn-primary" type="reset">Trở về</button></a>
+        </div>
+    </div>
+</div>
+

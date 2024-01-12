@@ -1,0 +1,601 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BilliardClub.Client.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BilliardClub.Client.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\Rotativa\\help-wkhtmltoimage.txt",
+      "PackagePath": "staticwebassets\\Rotativa\\help-wkhtmltoimage.txt"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\Rotativa\\help-wkhtmltopdf.txt",
+      "PackagePath": "staticwebassets\\Rotativa\\help-wkhtmltopdf.txt"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\Rotativa\\wkhtmltoimage.exe",
+      "PackagePath": "staticwebassets\\Rotativa\\wkhtmltoimage.exe"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "PackagePath": "staticwebassets\\Rotativa\\wkhtmltopdf.exe"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\Source\\Magnific-Popup-master.zip",
+      "PackagePath": "staticwebassets\\Source\\Magnific-Popup-master.zip"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\Source\\OwlCarousel2-2.3.4.zip",
+      "PackagePath": "staticwebassets\\Source\\OwlCarousel2-2.3.4.zip"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\Source\\SlickNav-master.zip",
+      "PackagePath": "staticwebassets\\Source\\SlickNav-master.zip"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\Source\\barfiller-master.zip",
+      "PackagePath": "staticwebassets\\Source\\barfiller-master.zip"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\Source\\bootstrap-4.2.1-dist.zip",
+      "PackagePath": "staticwebassets\\Source\\bootstrap-4.2.1-dist.zip"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\Source\\font-awesome-4.7.0.zip",
+      "PackagePath": "staticwebassets\\Source\\font-awesome-4.7.0.zip"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\Source\\jQuery.countdown-master.zip",
+      "PackagePath": "staticwebassets\\Source\\jQuery.countdown-master.zip"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\article.png",
+      "PackagePath": "staticwebassets\\article.png"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\css\\elegant-icons.css",
+      "PackagePath": "staticwebassets\\css\\elegant-icons.css"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\css\\jquery-ui.min.css",
+      "PackagePath": "staticwebassets\\css\\jquery-ui.min.css"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\css\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\css\\magnific-popup.css"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\css\\slicknav.min.css",
+      "PackagePath": "staticwebassets\\css\\slicknav.min.css"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\err.png",
+      "PackagePath": "staticwebassets\\err.png"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\fonts\\ElegantIcons.eot",
+      "PackagePath": "staticwebassets\\fonts\\ElegantIcons.eot"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\fonts\\ElegantIcons.svg",
+      "PackagePath": "staticwebassets\\fonts\\ElegantIcons.svg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\fonts\\ElegantIcons.ttf",
+      "PackagePath": "staticwebassets\\fonts\\ElegantIcons.ttf"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\fonts\\ElegantIcons.woff",
+      "PackagePath": "staticwebassets\\fonts\\ElegantIcons.woff"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\icon.ico",
+      "PackagePath": "staticwebassets\\icon.ico"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\banner\\banner-1.jpg",
+      "PackagePath": "staticwebassets\\img\\banner\\banner-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\banner\\banner-2.jpg",
+      "PackagePath": "staticwebassets\\img\\banner\\banner-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\banner\\banner-3.jpg",
+      "PackagePath": "staticwebassets\\img\\banner\\banner-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\blog-1.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\blog-10.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-10.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\blog-2.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\blog-3.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\blog-4.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-4.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\blog-5.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-5.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\blog-6.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-6.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\blog-7.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-7.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\blog-8.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-8.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\blog-9.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-9.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\details\\blog-details.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\details\\blog-details.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\details\\comment-1.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\details\\comment-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\details\\comment-2.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\details\\comment-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\details\\comment-3.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\details\\comment-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\sidebar\\fp-1.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\sidebar\\fp-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\sidebar\\fp-2.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\sidebar\\fp-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\blog\\sidebar\\fp-3.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\sidebar\\fp-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\categories\\category-1.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\category-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\categories\\category-2.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\category-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\categories\\category-3.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\category-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\categories\\category-4.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\category-4.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\categories\\category-5.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\category-5.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\discount.jpg",
+      "PackagePath": "staticwebassets\\img\\discount.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\instagram\\insta-1.jpg",
+      "PackagePath": "staticwebassets\\img\\instagram\\insta-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\instagram\\insta-2.jpg",
+      "PackagePath": "staticwebassets\\img\\instagram\\insta-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\instagram\\insta-3.jpg",
+      "PackagePath": "staticwebassets\\img\\instagram\\insta-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\instagram\\insta-4.jpg",
+      "PackagePath": "staticwebassets\\img\\instagram\\insta-4.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\instagram\\insta-5.jpg",
+      "PackagePath": "staticwebassets\\img\\instagram\\insta-5.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\instagram\\insta-6.jpg",
+      "PackagePath": "staticwebassets\\img\\instagram\\insta-6.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\payment\\payment-1.png",
+      "PackagePath": "staticwebassets\\img\\payment\\payment-1.png"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\payment\\payment-2.png",
+      "PackagePath": "staticwebassets\\img\\payment\\payment-2.png"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\payment\\payment-3.png",
+      "PackagePath": "staticwebassets\\img\\payment\\payment-3.png"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\payment\\payment-4.png",
+      "PackagePath": "staticwebassets\\img\\payment\\payment-4.png"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\payment\\payment-5.png",
+      "PackagePath": "staticwebassets\\img\\payment\\payment-5.png"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\details\\product-1.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\product-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\details\\product-2.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\product-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\details\\product-3.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\product-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\details\\product-4.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\product-4.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\details\\thumb-1.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\thumb-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\details\\thumb-2.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\thumb-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\details\\thumb-3.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\thumb-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\details\\thumb-4.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\thumb-4.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\product-1.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\product-2.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\product-3.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\product-4.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-4.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\product-5.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-5.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\product-6.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-6.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\product-7.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-7.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\product-8.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-8.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\related\\rp-1.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\related\\rp-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\related\\rp-2.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\related\\rp-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\related\\rp-3.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\related\\rp-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\product\\related\\rp-4.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\related\\rp-4.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop-cart\\cp-1.jpg",
+      "PackagePath": "staticwebassets\\img\\shop-cart\\cp-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop-cart\\cp-2.jpg",
+      "PackagePath": "staticwebassets\\img\\shop-cart\\cp-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop-cart\\cp-3.jpg",
+      "PackagePath": "staticwebassets\\img\\shop-cart\\cp-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop-cart\\cp-4.jpg",
+      "PackagePath": "staticwebassets\\img\\shop-cart\\cp-4.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop\\shop-1.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop\\shop-2.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop\\shop-3.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop\\shop-4.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-4.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop\\shop-5.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-5.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop\\shop-6.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-6.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop\\shop-7.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-7.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop\\shop-8.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-8.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\shop\\shop-9.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-9.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\trend\\bs-1.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\bs-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\trend\\bs-2.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\bs-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\trend\\bs-3.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\bs-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\trend\\f-1.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\f-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\trend\\f-2.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\f-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\trend\\f-3.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\f-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\trend\\ht-1.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\ht-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\trend\\ht-2.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\ht-2.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\trend\\ht-3.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\ht-3.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\img\\user-1.jpg",
+      "PackagePath": "staticwebassets\\img\\user-1.jpg"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\js\\jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\js\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-ui.min.js"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\js\\jquery.countdown.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.countdown.min.js"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\js\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\js\\jquery.nicescroll.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.nicescroll.min.js"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\js\\jquery.slicknav.js",
+      "PackagePath": "staticwebassets\\js\\jquery.slicknav.js"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\js\\mixitup.min.js",
+      "PackagePath": "staticwebassets\\js\\mixitup.min.js"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\paysuccess.png",
+      "PackagePath": "staticwebassets\\paysuccess.png"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_base.scss",
+      "PackagePath": "staticwebassets\\sass\\_base.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_blog-details.scss",
+      "PackagePath": "staticwebassets\\sass\\_blog-details.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_blog-sidebar.scss",
+      "PackagePath": "staticwebassets\\sass\\_blog-sidebar.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_blog.scss",
+      "PackagePath": "staticwebassets\\sass\\_blog.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\sass\\_breadcrumb.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_categories.scss",
+      "PackagePath": "staticwebassets\\sass\\_categories.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_checkout.scss",
+      "PackagePath": "staticwebassets\\sass\\_checkout.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_contact.scss",
+      "PackagePath": "staticwebassets\\sass\\_contact.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_footer.scss",
+      "PackagePath": "staticwebassets\\sass\\_footer.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_header.scss",
+      "PackagePath": "staticwebassets\\sass\\_header.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_home-page.scss",
+      "PackagePath": "staticwebassets\\sass\\_home-page.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_mixins.scss",
+      "PackagePath": "staticwebassets\\sass\\_mixins.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_product-details.scss",
+      "PackagePath": "staticwebassets\\sass\\_product-details.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_product.scss",
+      "PackagePath": "staticwebassets\\sass\\_product.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_responsive.scss",
+      "PackagePath": "staticwebassets\\sass\\_responsive.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_shop-cart.scss",
+      "PackagePath": "staticwebassets\\sass\\_shop-cart.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_shop.scss",
+      "PackagePath": "staticwebassets\\sass\\_shop.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\_variable.scss",
+      "PackagePath": "staticwebassets\\sass\\_variable.scss"
+    },
+    {
+      "Id": "E:\\do an chuyên nganh\\BilliardClub.Solution\\BilliardClub.Client\\wwwroot\\sass\\style.scss",
+      "PackagePath": "staticwebassets\\sass\\style.scss"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.BilliardClub.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.BilliardClub.Client.props",
+      "PackagePath": "build\\BilliardClub.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.BilliardClub.Client.props",
+      "PackagePath": "buildMultiTargeting\\BilliardClub.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.BilliardClub.Client.props",
+      "PackagePath": "buildTransitive\\BilliardClub.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

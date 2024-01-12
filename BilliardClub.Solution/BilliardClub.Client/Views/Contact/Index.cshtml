@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a asp-action="Index" asp-controller="Home"><i class="fa fa-home"></i> Trang chủ</a>
+                    <span>Liên hệ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- Contact Section Begin -->
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="contact__content">
+                    <div class="contact__address">
+                        <h5>Thông tin liên hệ</h5>
+                        <ul>
+                            @foreach (var item in ViewBag.ContactInformations)
+                            {
+                                <li>
+                                    <h6><i class="fa fa-map-marker"></i> Địa chỉ</h6>
+                                    <p>@item.Address</p>
+                                </li>
+                                <li>
+                                    <h6><i class="fa fa-phone"></i> Số điện thoại</h6>
+                                    <p><span>@item.Phone</span></p>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="contact__form">
+                        <h5>CẦN TƯ VẤN & HỖ TRỢ</h5>
+                        <form asp-action="SendContact" asp-controller="Contact" method="post">
+                            <input type="text" name="fullname" placeholder="Họ và tên" required />
+                            <input type="email" name="email" placeholder="Email" required/>
+                            <input type="tel" pattern="[0-9]{10}" name="phone" placeholder="Số điện thoại (10 chữ số)" required />
+                            <select class="form-control mb-3" name="detail" required>
+                                <option value="Không có yêu cầu cụ thể">Sản phẩm bạn cần</option>
+                                <option value="Mua bàn bida">Mua bàn bida</option>
+                                <option value="Mua cơ bida và phụ kiện">Mua cơ bida và phụ kiện</option>
+                                <option value="Thiết kế & thi công quán bida">Thiết kế & thi công quán bida</option>
+                                <option value="Setup & vận hành quán bida">Setup & vận hành quán bida</option>
+                                <option value="Tất cả các mục trên">Tất cả các mục trên</option>
+                            </select>
+                            <textarea placeholder="Lời nhắn" name="message" required></textarea>
+                            <button type="submit" class="site-btn">Gửi ngay</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->
+

@@ -1,0 +1,115 @@
+﻿@model List<CartItemViewModel>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int total = 0;
+
+}
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a asp-action="Index" asp-controller="Home"><i class="fa fa-home"></i> Trang chủ</a>
+                    <span>Giỏ hàng của tôi</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- Shop Cart Section Begin -->
+<section class="shop-cart spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shop__cart__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Đơn giá</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                
+                                <tr>
+                                    <td class="cart__product__item">
+                                        <img src="@("/uploads/product/" + item.Product.ProductImage)" height="100" width="100" alt="">
+                                        <div class="cart__product__item__title">
+                                            <h6>@item.Product.ProductName</h6>
+                                        </div>
+                                    </td>
+                                    @if (item.Product.DiscountPercent > 0 && item.Product.DiscountPercent <= 100)
+                                    {
+                                        
+                                        <td class="cart__price">@((item.Product.Price / 100 * (100 - item.Product.DiscountPercent)).ToString("n0"))</td>
+                                    }
+                                    else
+                                    {
+
+                                        <td class="cart__price">@(item.Product.Price.ToString("n0"))</td>
+                                    }
+                                    <td class="cart__quantity">
+                                        <div class="pro-qty">
+                                            <a asp-action="DecItem" asp-controller="Cart" asp-route-id="@item.Product.ProductId"><span class="dec qtybtn">-</span></a>
+                                            <input type="text" value="@item.Quantity">
+                                            <a asp-action="IncItem" asp-controller="Cart" asp-route-id="@item.Product.ProductId"><span class="inc qtybtn">+</span></a>
+                                        </div>
+                                    </td>
+                                    @if (item.Product.DiscountPercent > 0 && item.Product.DiscountPercent <= 100)
+                                    {
+                                        var price = item.Quantity * item.Product.Price / 100 * (100 - item.Product.DiscountPercent);
+                                        total += price;
+                                        <td class="cart__total">@(price.ToString("n0"))</td>
+                                    }
+                                    else
+                                    {
+                                        var price = item.Quantity * item.Product.Price;
+                                        total += price;
+                                        <td class="cart__total">@(price.ToString("n0"))</td>
+                                    }
+                                    <td class="cart__close">
+                                        <a asp-action="RemoveItem" asp-controller="Cart" asp-route-id="@item.Product.ProductId"><span class="icon_close"></span></a>
+                                    </td>
+                                </tr>
+                            }
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-4 col-sm-6">
+                <div class="cart__btn">
+                    <a asp-action="Index" asp-controller="Product">Tiếp tục mua hàng</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="cart__btn update__btn">
+                    <a asp-action="ClearCart" asp-controller="Cart">Xoá giỏ hàng</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="cart__total__procced">
+                    <h6>Tổng tiền giỏ hàng</h6>
+                    <ul>
+                        <li>Tổng thanh toán <span>@(total.ToString("n0"))</span></li>
+                    </ul>
+                    <a asp-action="Checkout" asp-controller="Order" class="primary-btn">Thanh toán giỏ hàng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shop Cart Section End -->
+

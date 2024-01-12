@@ -1,0 +1,173 @@
+﻿@model IEnumerable<Product>
+<!-- Banner Section Begin -->
+<section class="banner">
+    <div class="container mb-3">
+        <div class="banner__slider owl-carousel">
+            @foreach (var item in ViewBag.Slides)
+            {
+                <div class="banner__item">
+                    <img src="@("/uploads/slide/" + item.SlidePath)" height="450" width="auto" />
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- Banner Section End -->
+<!-- Product Section Begin -->
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div class="section-title">
+                    <h4>Sản phẩm mới</h4>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <ul class="filter__controls text-center">
+                    <li class="active" data-filter="*">Tất cả</li>
+                    @foreach (var item in ViewBag.ProductCategories)
+                    {
+                        <li style="padding: 5px;" data-filter=".@item.DataFilter">@item.CategoryName</li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="row property__gallery">
+            @foreach (var item in Model.Where(x => DateTime.Now.Subtract(x.CreatedAt).Days <= 30).OrderByDescending(x => x.CreatedAt))
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6 mix @item.ProductCategory.DataFilter">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="@("/uploads/product/" + item.ProductImage)">
+                            @if (item.Stock == 0)
+                            {
+                                <div class="label stockout">Đã hết hàng</div>
+
+                            }
+                            else if (item.CreatedAt.AddDays(30) >= DateTime.Now)
+                            {
+                                <div class="label new">Sản phẩm mới</div>
+                                @if (item.DiscountPercent > 0 && item.DiscountPercent <= 100)
+                                {
+                                    <div class="label sale mt-4">Giảm @item.DiscountPercent%</div>
+
+                                }
+                            }
+                            else
+                            {
+                                <div class="label sale">Giảm @item.DiscountPercent%</div>
+                            }
+                            <ul class="product__hover">
+                                <li><a href="@("/uploads/product/" + item.ProductImage)" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                <li><a asp-action="Details" asp-controller="Product" asp-route-id="@item.ProductId"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a asp-action="Details" asp-controller="Product" asp-route-id="@item.ProductId">@item.ProductName</a></h6>
+                            @if (item.DiscountPercent > 0 && item.DiscountPercent <= 100)
+                            {
+                                <div class="product__price">@((item.Price / 100 * (100 - item.DiscountPercent)).ToString("n0"))đ <span>@(item.Price.ToString("n0"))đ</span></div>
+                            }
+                            else
+                            {
+                                <div class="product__price">@(item.Price.ToString("n0"))đ</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- Product Section End -->
+<!-- Product Section Begin -->
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div class="section-title">
+                    <h4>Best Seller</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row property__gallery">
+            @foreach (var item in ViewBag.BestSellerProducts)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="@("/uploads/product/" + item.Product.ProductImage)">
+                            @if (item.Product.Stock == 0)
+                            {
+                                <div class="label sale">Best seller</div>
+                                <div class="label stockout mt-4">Đã hết hàng</div>
+                            }
+                            else
+                            {
+                                <div class="label sale">Best seller</div>
+                                @if (item.Product.DiscountPercent > 0 && item.Product.DiscountPercent <= 100)
+                                {
+                                    <div class="label sale mt-4">Giảm @item.Product.DiscountPercent%</div>
+
+                                }
+                            }
+                            <ul class="product__hover">
+                                <li><a href="@("/uploads/product/" + item.Product.ProductImage)" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                <li><a asp-action="Details" asp-controller="Product" asp-route-id="@item.Product.ProductId"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a asp-action="Details" asp-controller="Product" asp-route-id="@item.ProductId">@item.ProductName</a></h6>
+                            @if (item.Product.DiscountPercent > 0 && item.Product.DiscountPercent <= 100)
+                            {
+                                <div class="product__price">@((item.Product.Price / 100 * (100 - item.Product.DiscountPercent)).ToString("n0"))đ <span>@(item.Product.Price.ToString("n0"))đ</span></div>
+                            }
+                            else
+                            {
+                                <div class="product__price">@(item.Product.Price.ToString("n0"))đ</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- Product Section End -->
+<!-- Services Section Begin -->
+<section class="services spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="services__item">
+                    <i class="fa fa-car"></i>
+                    <h6>Miễn phí vận chuyển</h6>
+                    <p>Cho tất cả đơn hàng</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="services__item">
+                    <i class="fa fa-money"></i>
+                    <h6>Hoàn trả tiền</h6>
+                    <p>Cho sản phẩm không chính hãng</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="services__item">
+                    <i class="fa fa-support"></i>
+                    <h6>Hỗ trợ 24/7</h6>
+                    @foreach (var item in ViewBag.ContactInformations)
+                    {
+                        <p><span class="fa fa-phone"></span> @item.Phone</p>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="services__item">
+                    <i class="fa fa-credit-card"></i>
+                    <h6>Thanh toán an toàn</h6>
+                    <p>100% bảo mật</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section End -->

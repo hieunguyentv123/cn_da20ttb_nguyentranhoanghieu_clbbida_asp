@@ -1,0 +1,70 @@
+﻿@model User;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Khách hàng";
+    ViewData["Action"] = "Thêm mới";
+}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h4 mb-0">Thêm mới khách hàng</h3>
+            <div class="card-close">
+                <p class="mb-0 text-danger">* là thông tin bắt buộc</p>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" asp-action="Create" asp-controller="Customer" method="POST">
+                <div class="row">
+                    <label class="col-sm-2 form-label">Tên tài khoản<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Username" required />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label">Họ & tên khách hàng<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Fullname" required />
+                        <span asp-validation-for="Fullname" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label">Email<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Email" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label">Địa chỉ<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Address" required />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label">Số điện thoại<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Phone" required />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label">Ngày sinh<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control mb-3" asp-for="DOB" required />
+                        <span asp-validation-for="DOB" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 ms-auto">
+                        <button class="btn btn-primary" type="submit">Thêm mới</button>
+                    </div>
+                </div>
+            </form>
+            <a asp-action="Index" asp-controller="Customer"><button class="btn btn-primary" type="reset">Trở về</button></a>
+        </div>
+    </div>
+</div>
+

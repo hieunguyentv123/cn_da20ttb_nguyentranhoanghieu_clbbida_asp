@@ -1,0 +1,121 @@
+﻿@model IPagedList<Product>;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Sản phẩm";
+    ViewData["Action"] = "Danh sách";
+    string name = "sản phẩm";
+    int num = 0;
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card mb-0">
+            <div class="card-header">
+                <h3 class="mb-0 text-uppercase">Danh sách @name</h3>
+                <br />
+                <h4 class="h4 mb-0">Số sản phẩm hiện có: @Model.TotalItemCount</h4>
+            </div>
+            <div class="card-body">
+
+                <form>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <input type="text" name="name" placeholder="Tên sản phẩm..." class="form-control" />
+                        </div>
+                        <div class="col-sm-5">
+                            <select type="text" id="category" name="category" class="form-select">
+                                <option value="" selected>--Chọn danh mục sản phẩm--</option>
+                                @foreach (var item in ViewBag.CategoryList)
+                                {
+                                    <option value="@item.CategoryId">@item.CategoryName</option>
+                                }
+                            </select>
+                        </div>
+                        <button type="submit" class="col-sm-2 btn btn-primary"><i class="fa fa-filter"></i> Lọc dữ liệu</button>
+                    </div>
+                </form>
+                <br />
+                <a asp-action="Create" asp-controller="Product"><button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Thêm mới</button></a>
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table mb-0 ">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Số lượng tồn</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    num++;
+                                    <tr>
+                                        <th scope="row">@num</th>
+                                        <td>@item.ProductName</td>
+                                        <td>@item.Stock</td>
+                                        <td>
+                                            @if (item.IsDisplay)
+                                            {
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <span class="badge bg-primary rounded-3 fw-semibold">Đang hiển thị</span>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <span class="badge bg-danger rounded-3 fw-semibold">Đang ẩn</span>
+                                                </div>
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (item.IsDisplay)
+                                            {
+                                                <a asp-action="ChangeStatus" asp-controller="Product" asp-route-id="@item.ProductId">
+                                                    <button type="submit" class="btn btn-dark"><i class="fa fa-eye-slash"></i></button>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a asp-action="ChangeStatus" asp-controller="Product" asp-route-id="@item.ProductId">
+                                                    <button type="submit" class="btn btn-dark"><i class="fa fa-eye"></i></button>
+                                                </a>
+                                            }
+                                            &nbsp&nbsp
+                                            <a asp-action="Details" asp-controller="Product" asp-route-id="@item.ProductId">
+                                                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                            </a>
+                                            &nbsp&nbsp
+                                            <a asp-action="Edit" asp-controller="Product" asp-route-id="@item.ProductId">
+                                                <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i></button>
+                                            </a>
+                                            &nbsp&nbsp
+                                            <a asp-action="Delete" asp-controller="Product" asp-route-id="@item.ProductId">
+                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br />
+                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                <nav aria-label="Page navigation">
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions()
+               {
+                   DisplayLinkToIndividualPages = true,
+                   DisplayPageCountAndCurrentLocation = false,
+                   MaximumPageNumbersToDisplay = 10,
+                   LiElementClasses = new string[] { "page-item" },
+                   PageClasses = new string[] { "page-link" },
+               })
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+

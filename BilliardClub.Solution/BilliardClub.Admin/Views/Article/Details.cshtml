@@ -1,0 +1,101 @@
+﻿@model Article;
+@{
+    ViewData["Title"] = "Bài viết";
+    ViewData["Action"] = "Thông tin chi tiết bài viết " + Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h4 mb-0">Thông tin bài viết @Model.Title</h3>
+            <br />
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Tiêu đề: </label>
+                <div class="col-sm-10">
+                    <p>@Model.Title</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Tạo bởi: </label>
+                <div class="col-sm-10">
+                    <p>@Model.User.Fullname</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Thời gian tạo: </label>
+                <div class="col-sm-10">
+                    <p>@Model.CreatedAt.ToString("hh:mm dd/MM/yyyy")</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Lượt xem: </label>
+                <div class="col-sm-10">
+                    <p>@Model.ViewCount</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Danh mục bài viết: </label>
+                <div class="col-sm-10">
+                    <p>@Model.ArticleCategory.ArticleCatName</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Trạng thái: </label>
+                <div class="col-sm-10">
+                    @if (Model.IsDisplay)
+                    {
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-primary rounded-3 fw-semibold">Đang hiển thị</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-danger rounded-3 fw-semibold">Đang ẩn</span>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Hình ảnh bài viết: </label>
+                <div class="col-sm-10">
+                    @if (!String.IsNullOrEmpty(Model.ImagePath))
+                    {
+                        <img src="@("/uploads/articleimg/" + Model.ImagePath)" alt="" width="779" height="438">
+                    }
+                    else
+                    {
+                        <p>Bài viết không có ảnh</p>
+                    }
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Video bài viết: </label>
+                <div class="col-sm-10">
+                    @if (!String.IsNullOrEmpty(Model.VideoPath))
+                    {
+                        <iframe width="779" height="438" src="@Model.VideoPath" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    }
+                    else
+                    {
+                        <p>
+                            Bài viết không có video
+                        </p>
+                    }
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Nội dung bài viết: </label>
+                <div class="col-sm-10">
+                    @Html.Raw(Model.Content.Replace(Environment.NewLine, "<br />"))
+                </div>
+            </div>
+            <a asp-action="Edit" asp-controller="Article" asp-route-id="@Model.ArticleId"><button class="btn btn-warning" type="reset">Cập nhật</button></a>&nbsp&nbsp
+            <a asp-action="Index" asp-controller="Article"><button class="btn btn-primary" type="reset">Trở về</button></a>
+        </div>
+    </div>
+</div>
+

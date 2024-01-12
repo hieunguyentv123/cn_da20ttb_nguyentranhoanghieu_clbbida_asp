@@ -1,0 +1,40 @@
+﻿@model Product;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Sản phẩm";
+    ViewData["Action"] = "Xoá sản phẩm " + Model.ProductName;
+}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-close">
+                <p class="mb-0 text-danger">Hành động không thể hoàn tác</p>
+            </div>
+            <h3 class="h4 mb-0">Xóa sản phẩm</h3>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" asp-action="Delete" asp-controller="Product" method="POST">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="mb-0">Bạn có chắc chắn muốn xóa sản phẩm: @Model.ProductName ?</p><br />
+                        <p class="mb-0">Những thông tin liên quan đều sẽ bị xóa khỏi cơ sở dữ liệu!</p><br />
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label mb-0">Nhập "@Model.ProductName" để xác nhận xóa!<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" name="confirm" class="form-control" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 ms-auto">
+                        <button class="btn btn-danger" type="submit">Xóa khỏi danh sách</button>
+                    </div>
+                </div>
+            </form>
+            <a asp-action="Index" asp-controller="Product"><button class="btn btn-secondary" type="reset">Hủy</button></a>
+        </div>
+    </div>
+</div>
+

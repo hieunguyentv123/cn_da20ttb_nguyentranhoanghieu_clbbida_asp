@@ -1,0 +1,22 @@
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Model\bin\Debug\net6.0\BilliardClub.Model.deps.json
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Model\bin\Debug\net6.0\BilliardClub.Model.dll
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Model\bin\Debug\net6.0\BilliardClub.Model.pdb
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\BilliardClub.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\BilliardClub.Model.AssemblyInfoInputs.cache
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\BilliardClub.Model.AssemblyInfo.cs
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\BilliardClub.Model.csproj.CoreCompileInputs.cache
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\BilliardClub.Model.dll
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\refint\BilliardClub.Model.dll
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\BilliardClub.Model.pdb
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\ref\BilliardClub.Model.dll
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Model\bin\Debug\net6.0\BilliardClub.Model.deps.json
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Model\bin\Debug\net6.0\BilliardClub.Model.dll
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Model\bin\Debug\net6.0\BilliardClub.Model.pdb
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\BilliardClub.Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\BilliardClub.Model.AssemblyInfoInputs.cache
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\BilliardClub.Model.AssemblyInfo.cs
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\BilliardClub.Model.csproj.CoreCompileInputs.cache
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\BilliardClub.Model.dll
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\refint\BilliardClub.Model.dll
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\BilliardClub.Model.pdb
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Model\obj\Debug\net6.0\ref\BilliardClub.Model.dll

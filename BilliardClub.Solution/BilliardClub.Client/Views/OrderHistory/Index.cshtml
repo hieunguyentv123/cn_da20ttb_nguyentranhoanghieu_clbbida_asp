@@ -1,0 +1,100 @@
+﻿@model IPagedList<Order>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int num = 0;
+}
+
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a asp-action="Index" asp-controller="Home"><i class="fa fa-home"></i> Trang chủ</a>
+                    <span>Lịch sử mua hàng</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- Breadcrumb End -->
+<div class="text-center">
+    <h3 class="mb-0 text-uppercase">Lịch sử mua hàng tại 84 Billiard</h3>
+    <br />
+    <h4 class="h4 mb-0">Số đơn hàng đã mua: @Model.TotalItemCount</h4>
+    <br />
+</div>
+<!-- Shop Section Begin -->
+<section class="shop spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div class="blog__sidebar">
+                    <div class="blog__sidebar__item">
+                        <div class="section-title">
+                            <h4>Danh mục</h4>
+                        </div>
+                        <ul>
+                            <li><a asp-action="Index" asp-controller="Article"><h6>Bài viết & sự kiện</h6></a></li>
+                            <li><a asp-action="Index" asp-controller="Product"><h6>Sản phẩm</h6></a></li>
+                            <li><a asp-action="Index" asp-controller="Contact"><h6>Liên hệ</h6></a></li>
+                            <li><a asp-action="Index" asp-controller="Cart"><h6>Giỏ hàng</h6></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <div class="row">
+                    @if (Model.Count == 0)
+                    {
+                        <div class="col-lg-12 text-center">
+                            <h6 class="font-weight-bold">Bạn chưa có đơn hàng nào.</h6>
+                        </div>
+                    }
+                    @foreach (var item in Model)
+                    {
+                        num++;
+                        <div class="col-lg-12 col-md-12 col-sm-12 mb-4">
+                            <div class="blog__item">
+                                <div class="blog__item__text">
+                                    <h6>@num. Đơn hàng: <a asp-action="Details" asp-controller="OrderHistory" asp-route-id="@item.OrderId">@item.OrderId</a></h6>
+                                    <ul>
+                                        <li>Thời gian: @item.OrderAt.ToString("HH:mm dd/MM/yyyy")</li>
+                                        <li>Phương thức thanh toán: <span>@item.Payment.Method</span></li>
+                                        <li>
+                                            @if (item.IsPaid)
+                                            {
+                                                <span class="text-success">Đã thanh toán</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-danger">Chưa thanh toán</span>
+                                            }
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <br />
+                    <div class="col-lg-12 text-center">
+                        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                        <nav aria-label="Page navigation">
+                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions()
+                       {
+                           DisplayLinkToIndividualPages = true,
+                           DisplayPageCountAndCurrentLocation = false,
+                           MaximumPageNumbersToDisplay = 10,
+                           LiElementClasses = new string[] { "page-item" },
+                           PageClasses = new string[] { "page-link" },
+                       })
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shop Section End -->

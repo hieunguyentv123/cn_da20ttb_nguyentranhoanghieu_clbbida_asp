@@ -1,0 +1,82 @@
+﻿@model Contact;
+@{
+    ViewData["Title"] = "Liên hệ từ khách hàng";
+    ViewData["Action"] = "Phản hồi liên hệ từ khách hàng " + Model.Fullname;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h4 mb-0">Thông tin liên hệ từ khách hàng @Model.Fullname</h3>
+            <br />
+        </div>
+        <div class="card-body">
+        <form asp-action="SendMail" asp-controller="Contact" method="POST">
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Tên khách hàng: </label>
+                <div class="col-sm-10">
+                    <p>@Model.Fullname</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Địa chỉ email: </label>
+                <div class="col-sm-10">
+                    <p>@Model.Email</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Số điện thoại: </label>
+                <div class="col-sm-10">
+                    <p>@Model.Phone</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Thời gian gửi: </label>
+                <div class="col-sm-10">
+                    <p>@Model.SendAt.ToString("hh:mm dd/MM/yyyy")</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Trạng thái: </label>
+                <div class="col-sm-10">
+                    @if (Model.IsReplied)
+                    {
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-primary rounded-3 fw-semibold">Đã phản hồi</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-danger rounded-3 fw-semibold">Chưa phản hồi</span>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Nhu cầu khách hàng: </label>
+                <div class="col-sm-10">
+                    @Model.ContactDetail
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Nội dung cụ thể: </label>
+                <div class="col-sm-10">
+                    @Html.Raw(Model.Message.Replace(Environment.NewLine, "<br />"))
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 form-label">Phản hồi đến khách hàng: </label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" name="content" rows="10" required></textarea>
+                </div>
+            </div>
+            <button class="btn btn-warning" type="reset"><i class="fa fa-google-plus"></i>Gửi phản hồi qua Google Mail</button>
+            </form>
+            &nbsp&nbsp
+            <a asp-action="Index" asp-controller="Contact"><button class="btn btn-primary" type="reset">Trở về</button></a>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,58 @@
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\bin\Debug\net6.0\BilliardClub.Data.deps.json
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\bin\Debug\net6.0\BilliardClub.Data.runtimeconfig.json
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\bin\Debug\net6.0\BilliardClub.Data.dll
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\bin\Debug\net6.0\BilliardClub.Data.pdb
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\bin\Debug\net6.0\BilliardClub.Model.dll
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\bin\Debug\net6.0\BilliardClub.Model.pdb
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.csproj.AssemblyReference.cache
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.AssemblyInfoInputs.cache
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.AssemblyInfo.cs
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.csproj.CoreCompileInputs.cache
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.csproj.CopyComplete
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.dll
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\refint\BilliardClub.Data.dll
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.pdb
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.genruntimeconfig.cache
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\ref\BilliardClub.Data.dll
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.InitDb.resources
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.csproj.GenerateResource.cache
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.AddLockUser.resources
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.Reinit.resources
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.DeleteSlideOrderNum.resources
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.AddProductImage.resources
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.EditDb.resources
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.AdjustTable.resources
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.AddDataFilter.resources
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.AdjustContact.resources
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.InitDbb.resources
+C:\Users\HUYNH HUNG\source\repos\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.InitDbbb.resources
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\bin\Debug\net6.0\BilliardClub.Data.deps.json
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\bin\Debug\net6.0\BilliardClub.Data.runtimeconfig.json
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\bin\Debug\net6.0\BilliardClub.Data.dll
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\bin\Debug\net6.0\BilliardClub.Data.pdb
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\bin\Debug\net6.0\BilliardClub.Model.dll
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\bin\Debug\net6.0\BilliardClub.Model.pdb
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.csproj.AssemblyReference.cache
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.InitDb.resources
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.AddLockUser.resources
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.Reinit.resources
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.DeleteSlideOrderNum.resources
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.AddProductImage.resources
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.EditDb.resources
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.AdjustTable.resources
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.AddDataFilter.resources
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.AdjustContact.resources
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.InitDbb.resources
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.Migrations.InitDbbb.resources
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.csproj.GenerateResource.cache
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.AssemblyInfoInputs.cache
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.AssemblyInfo.cs
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.csproj.CoreCompileInputs.cache
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.csproj.CopyComplete
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.dll
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\refint\BilliardClub.Data.dll
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.pdb
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\BilliardClub.Data.genruntimeconfig.cache
+E:\do an chuyên nganh\BilliardClub.Solution\BilliardClub.Data\obj\Debug\net6.0\ref\BilliardClub.Data.dll

@@ -1,0 +1,97 @@
+﻿@model User;
+@{
+    ViewData["Title"] = "Khách hàng";
+    ViewData["Action"] = "Thông tin chi tiết khách hàng " + Model.Fullname;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h4 mb-0">Thông tin khách hàng @Model.Fullname</h3>
+            <br />
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <label class="col-sm-2 form-label">Họ tên: </label>
+                <div class="col-sm-10">
+                    <p>@Model.Fullname</p>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-2 form-label">Email: </label>
+                <div class="col-sm-10">
+                    <p>@Model.Email</p>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-2 form-label">Số điện thoại: </label>
+                <div class="col-sm-10">
+                    <p>@Model.Phone</p>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-2 form-label">Địa chỉ: </label>
+                <div class="col-sm-10">
+                    <p>@Model.Address</p>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-2 form-label">Ngày sinh: </label>
+                <div class="col-sm-10">
+                    <p>@Model.DOB.ToString("dd/MM/yyyy")</p>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-2 form-label">Vai trò: </label>
+                <div class="col-sm-10">
+                    @if (!Model.IsAdministrator)
+                    {
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-primary rounded-3 fw-semibold">Khách hàng</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-danger rounded-3 fw-semibold">Quản trị viên</span>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-2 form-label">Trạng thái tài khoản: </label>
+                <div class="col-sm-10">
+                    @if (!Model.IsLocked)
+                    {
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-primary rounded-3 fw-semibold">Đang hoạt động</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-danger rounded-3 fw-semibold">Đang bị khoá</span>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-2 form-label">Ảnh đại diện: </label>
+                <div class="col-sm-10">
+                    @if (!String.IsNullOrEmpty(@Model.AvatarPath))
+                    {
+                        <img src="@("/uploads/avatar/" + Model.AvatarPath)" alt="" width="200" height="200" class="rounded-circle">
+                    }
+                    else
+                    {
+                        <img src="~/assets/images/profile/user-1.jpg" alt="" width="200" height="200" class="rounded-circle">
+                    }
+                </div>
+            </div>
+            <a asp-action="Edit" asp-controller="Customer" asp-route-id="@Model.UserId"><button class="btn btn-warning" type="reset">Cập nhật</button></a>&nbsp&nbsp
+            <a asp-action="Index" asp-controller="Customer"><button class="btn btn-primary" type="reset">Trở về</button></a>
+        </div>
+    </div>
+</div>
+

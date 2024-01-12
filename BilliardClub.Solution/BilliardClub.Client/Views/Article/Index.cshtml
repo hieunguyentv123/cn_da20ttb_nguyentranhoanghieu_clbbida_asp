@@ -1,0 +1,108 @@
+﻿@model IPagedList<Article>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a href="#"><i class="fa fa-home"></i> Bài viết & sự kiện</a>
+                    <span>@ViewData["Category"]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<div class="text-center">
+    <h3 class="mb-0 text-uppercase">@ViewData["Category"]</h3>
+    <br />
+    <h4 class="h4 mb-0">Số bài viết hiện có: @Model.TotalItemCount</h4>
+    <br />
+</div>
+<form>
+    <div class="row">
+        <div class="col-sm-2 text-center">
+            <h5 class="font-weight-bold">Tìm kiếm theo:</h5>
+        </div>
+        <div class="col-sm-5">
+            <input type="text" name="title" placeholder="Tiêu đề bài biết..." class="form-control" />
+        </div>
+        <div class="col-sm-3">
+            <select type="text" id="category" name="category" placeholder="Danh mục bài viết" class="form-control">
+                <option value="">--Chọn danh mục bài viết--</option>
+                @foreach (var item in ViewBag.ArticleCategories)
+                {
+                    <option value="@item.ArticleCatId">@item.ArticleCatName</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="col-sm-2 btn btn-primary"><i class="fa fa-filter"></i> Lọc dữ liệu</button>
+    </div>
+</form>
+
+<!-- Blog Section Begin -->
+<section class="blog spad">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                @if (String.IsNullOrEmpty(item.ImagePath))
+                {
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="blog__item">
+                            <div class="blog__item__pic set-bg" data-setbg="/article.png"></div>
+                            <div class="blog__item__text">
+                                <h6><a asp-action="Details" asp-controller="Article" asp-route-id="@item.ArticleId">@item.Title</a></h6>
+                                <ul>
+                                    <li>Tác giả: <span>@item.User.Fullname</span></li>
+                                    <li>Danh mục: <span>@item.ArticleCategory.ArticleCatName</span></li>
+                                    <li>Ngày đăng: @item.CreatedAt.ToString("dd/MM/yyyy")</li>
+                                    <li>Lượt xem: @item.ViewCount</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="blog__item">
+                            <div class="blog__item__pic set-bg" data-setbg="@("/uploads/articleimg/" + item.ImagePath)"></div>
+                            <div class="blog__item__text">
+                                <h6><a asp-action="Details" asp-controller="Article" asp-route-id="@item.ArticleId">@item.Title</a></h6>
+                                <ul>
+                                    <li>Tác giả: <span>@item.User.Fullname</span></li>
+                                    <li>Danh mục: <span>@item.ArticleCategory.ArticleCatName</span></li>
+                                    <li>Ngày đăng: @item.CreatedAt.ToString("dd/MM/yyyy")</li>
+                                    <li>Lượt xem: @item.ViewCount</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            <br />
+            <div class="col-lg-12 text-center">
+                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                <nav aria-label="Page navigation">
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions()
+                {
+                    DisplayLinkToIndividualPages = true,
+                    DisplayPageCountAndCurrentLocation = false,
+                    MaximumPageNumbersToDisplay = 10,
+                    LiElementClasses = new string[] { "page-item" },
+                    PageClasses = new string[] { "page-link" },
+                })
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Section End -->
+

@@ -1,0 +1,101 @@
+﻿@model Product;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Sản phẩm";
+    ViewData["Action"] = "Chỉnh sửa";
+}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h4 mb-0">Chỉnh sửa sản phẩm</h3>
+            <div class="card-close">
+                <p class="mb-0 text-danger">* là thông tin bắt buộc</p>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" enctype="multipart/form-data" asp-action="Edit" asp-controller="Product" method="POST">
+                <div class="row" hidden>
+                    <label class="col-sm-2 form-label"> Id<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="ProductId" required readonly />
+                        <span asp-validation-for="ProductId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row" hidden>
+                    <label class="col-sm-2 form-label"> IsDisplay<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="IsDisplay" required readonly />
+                        <span asp-validation-for="IsDisplay" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label"> Tên sản phẩm<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="ProductName" required />
+                        <span asp-validation-for="ProductName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 form-label"> Thuộc danh mục<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <select type="text" id="category" asp-for="CategoryId" class="form-select">
+                            @foreach (var item in ViewBag.CategoryList)
+                            {
+                                <option value="@item.CategoryId">@item.CategoryName</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label"> Đơn giá<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control mb-3" asp-for="Price" required />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label"> % giảm giá<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="number" max="100" min="0" class="form-control mb-3" asp-for="DiscountPercent" required />
+                        <span asp-validation-for="DiscountPercent" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label"> Số lượng tồn<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control mb-3" asp-for="Stock" min="0" required />
+                        <span asp-validation-for="Stock" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row" hidden>
+                    <label class="col-sm-2 form-label"> Thời gian tạo<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="CreatedAt" required />
+                        <span asp-validation-for="Stock" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3 mt-3">
+                    <label class="col-sm-2 form-label"> Ảnh sản phẩm</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="ProductImage" hidden/>
+                        <input type="file" name="img" class="form-control" accept="image/png, image/jpg, image/jpeg" />
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label"> Mô tả sản phẩm<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control mb-3" asp-for="ProductDetail" rows="30" required></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 ms-auto">
+                        <button class="btn btn-warning" type="submit">Lưu thay đổi</button>
+                    </div>
+                </div>
+            </form>
+            <a asp-action="Index" asp-controller="Product"><button class="btn btn-primary" type="reset">Trở về</button></a>
+        </div>
+    </div>
+</div>
+

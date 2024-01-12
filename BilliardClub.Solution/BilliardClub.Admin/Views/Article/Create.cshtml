@@ -1,0 +1,65 @@
+﻿@model Article;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Bài viết";
+    ViewData["Action"] = "Thêm mới";
+}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h4 mb-0">Thêm mới bài viết</h3>
+            <div class="card-close">
+                <p class="mb-0 text-danger">* là thông tin bắt buộc</p>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" enctype="multipart/form-data" asp-action="Create" asp-controller="Article" method="POST">
+                <div class="row">
+                    <label class="col-sm-2 form-label"> Tiêu đề bài viết<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Title" required />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label"> Thuộc danh mục<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <select type="text" id="category" asp-for="CategoryId" class="form-select">
+                            @foreach (var item in ViewBag.CategoryList)
+                            {
+                                <option value="@item.ArticleCatId">@item.ArticleCatName</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3 mt-3">
+                    <label class="col-sm-2 form-label"> Ảnh bài viết</label>
+                    <div class="col-sm-10">
+                        <input type="file" name="img" class="form-control" accept="image/png, image/jpg, image/jpeg" />
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label"> Đường dẫn video</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="VideoPath" />
+                        <span asp-validation-for="VideoPath" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label"> Nội dung bài viết<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control mb-3" asp-for="Content" rows="30" required></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 ms-auto">
+                        <button class="btn btn-primary" type="submit">Thêm mới</button>
+                    </div>
+                </div>
+            </form>
+            <a asp-action="Index" asp-controller="Article"><button class="btn btn-primary" type="reset">Trở về</button></a>
+        </div>
+    </div>
+</div>
+

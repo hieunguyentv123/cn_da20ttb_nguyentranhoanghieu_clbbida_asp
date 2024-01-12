@@ -1,0 +1,49 @@
+﻿@model Payment;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Phương thức thanh toán";
+    ViewData["Action"] = "Chỉnh sửa phương thức " + Model.Method;
+}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h4 mb-0">Chỉnh sửa phương thức thanh toán</h3>
+            <div class="card-close">
+                <p class="mb-0 text-danger">* là thông tin bắt buộc</p>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" asp-action="Edit" asp-controller="Payment" method="POST">
+                <div class="row" hidden>
+                    <label class="col-sm-2 form-label">Mã phương thức<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="PaymentId" required />
+                        <span asp-validation-for="PaymentId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-label">Tên phương thức<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="Method" required />
+                        <span asp-validation-for="Method" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row" hidden>
+                    <label class="col-sm-2 form-label">Trạng thái<small class="text-danger"> *</small></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control mb-3" asp-for="IsApproved" required />
+                        <span asp-validation-for="IsApproved" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 ms-auto">
+                        <button class="btn btn-warning" type="submit">Lưu thay đổi</button>
+                    </div>
+                </div>
+            </form>
+            <a asp-action="Index" asp-controller="Payment"><button class="btn btn-primary" type="reset">Trở về</button></a>
+        </div>
+    </div>
+</div>
+

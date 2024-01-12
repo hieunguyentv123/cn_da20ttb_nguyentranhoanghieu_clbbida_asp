@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Access Denied";
+    ViewData["Description"] = "Quyền truy cập của bạn bị từ chối!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-xxl container-p-y">
+    <div class="misc-wrapper text-center">
+        <h2 class="mb-2 mx-2">@ViewData["Title"]</h2>
+        <p class="mb-4 mx-2">Oops! 😖 @ViewData["Description"]</p>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Quay về trang chủ</a>
+        <div class="mt-3">
+            <img src="~/err.png"
+                 alt="Error"
+                 width="500"
+                 class="img-fluid" />
+        </div>
+    </div>
+</div>
+

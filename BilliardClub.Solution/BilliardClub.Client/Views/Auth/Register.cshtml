@@ -1,0 +1,81 @@
+﻿@model User;
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a asp-action="Index" asp-controller="Home"><i class="fa fa-home"></i> Trang chủ</a>
+                    <span>Đăng ký thành viên</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+     data-sidebar-position="fixed" data-header-position="fixed">
+    <div class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center w-100">
+            <div class="row justify-content-center w-100">
+                <div class="col-md-8 col-lg-6 col-xxl-3">
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <div class="logo text-center mt-3 mb-3">
+                                <h2 class="font-weight-bold">ĐĂNG KÝ THÀNH VIÊN</h2>
+                            </div>
+                            <form method="POST" asp-action="Register" asp-controller="Auth">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label text-uppercase font-weight-bold">Tài khoản</label>
+                                    <input type="text" asp-for="Username" class="form-control" autocomplete="off" required id="username"/>
+                                    <span asp-validation-for="Username" class="text-danger"></span>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="password" class="form-label text-uppercase font-weight-bold">Mật khẩu</label>
+                                    <input type="password" asp-for="Password" class="form-control" autocomplete="off" required id="password"/>
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label text-uppercase font-weight-bold">Tên người dùng</label>
+                                    <input type="text" asp-for="Fullname" class="form-control" autocomplete="off" required id="name" />
+                                    <span asp-validation-for="Fullname" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label text-uppercase font-weight-bold">Email</label>
+                                    <input type="text" asp-for="Email" class="form-control" autocomplete="off" required id="email"/>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label text-uppercase font-weight-bold">Số điện thoại</label>
+                                    <input type="text" asp-for="Phone" class="form-control" autocomplete="off" required id="phone"/>
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label text-uppercase font-weight-bold">Địa chỉ</label>
+                                    <input type="text" asp-for="Address" class="form-control" autocomplete="off" required id="address" />
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="dob" class="form-label text-uppercase font-weight-bold">Ngày sinh</label>
+                                    <input type="date" asp-for="DOB" class="form-control" autocomplete="off" required id="dob"/>
+                                    <span asp-validation-for="DOB" class="text-danger"></span>
+                                </div>
+                                <input type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" value="Đăng ký" />
+                            </form>
+                            <div class="text-center ">
+                                <h6 class="font-weight-bold mb-3">Đã có tài khoản thành viên? <a asp-action="Login" asp-controller="Auth">Đăng nhập tại đây</a></h6>
+                                <h6 class="font-weight-bold mb-3">Hoặc:</h6>
+                                <a asp-action="GoogleLogin" asp-controller="Auth">
+                                    <button class="btn btn-danger w-100 py-8 fs-4 mb-4 rounded-2"><i class="fa fa-google-plus"></i> Đăng nhập với tài khoản Google</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

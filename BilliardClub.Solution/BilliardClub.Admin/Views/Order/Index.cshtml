@@ -1,0 +1,94 @@
+﻿@model IPagedList<Order>;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Đơn hàng";
+    ViewData["Action"] = "Danh sách";
+    string name = "đơn hàng đã bán";
+    int num = 0;
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card mb-0">
+            <div class="card-header">
+                <h3 class="mb-0 text-uppercase">Danh sách @name</h3>
+                <br />
+                <h4 class="h4 mb-0">Số đơn hàng hiện có: @Model.TotalItemCount</h4>
+            </div>
+            <div class="card-body">
+
+                <form>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <input type="text" name="code" placeholder="Mã đơn hàng..." class="form-control" />
+                        </div>
+                        <div class="col-sm-5"><input class="form-control" type="date" name="date" />
+                        </div>
+                        <button type="submit" class="col-sm-2 btn btn-primary"><i class="fa fa-filter"></i> Lọc dữ liệu</button>
+                    </div>
+                </form>
+                <br />
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table mb-0 ">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Mã đơn hàng</th>
+                                    <th>Người mua</th>
+                                    <th>Thời gian mua</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    num++;
+                                    <tr>
+                                        <th scope="row">@num</th>
+                                        <td style="width: 200px !important">@item.OrderId</td>
+                                        <td>@item.User.Fullname</td>
+                                        <td>@item.OrderAt.ToString("hh:mm dd/MM/yyyy")</td>
+                                        <td>
+                                            @if (item.IsPaid)
+                                            {
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <span class="badge bg-success rounded-3 fw-semibold">Đã thanh toán</span>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <span class="badge bg-danger rounded-3 fw-semibold">Chưa thanh toán</span>
+                                                </div>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a asp-action="Details" asp-controller="Order" asp-route-id="@item.OrderId">
+                                                <button type="submit" class="btn btn-primary"><i class="fa fa-eye"></i></button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br />
+                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                <nav aria-label="Page navigation">
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions()
+               {
+                   DisplayLinkToIndividualPages = true,
+                   DisplayPageCountAndCurrentLocation = false,
+                   MaximumPageNumbersToDisplay = 10,
+                   LiElementClasses = new string[] { "page-item" },
+                   PageClasses = new string[] { "page-link" },
+               })
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+

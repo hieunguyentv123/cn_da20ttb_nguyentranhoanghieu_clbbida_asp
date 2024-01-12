@@ -1,0 +1,99 @@
+﻿@model Article;
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a asp-action="Index" asp-controller="Article"><i class="fa fa-home"></i> Bài viết & sự kiện</a>
+                    <a asp-action="Index" asp-controller="Article" asp-route-category="@Model.ArticleCategory.ArticleCatId">@Model.ArticleCategory.ArticleCatName</a>
+                    <span>@Model.Title</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- Blog Details Section Begin -->
+<section class="blog-details spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+                <div class="blog__details__content">
+                    <div class="blog__details__item">
+                        <img src="@("/uploads/articleimg/" + Model.ImagePath)" alt="">
+                        <div class="blog__details__item__title">
+                            <span class="tip">@Model.ArticleCategory.ArticleCatName</span>
+                            <h4>@Model.Title</h4>
+                            <ul>
+                                <li>Tác giả: <span>@Model.User.Fullname</span></li>
+                                <li>Danh mục: <span>@Model.ArticleCategory.ArticleCatName</span></li>
+                                <li>Ngày đăng: @Model.CreatedAt.ToString("dd/MM/yyyy")</li>
+                                <li>Lượt xem: @Model.ViewCount</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="blog__details__desc">
+                        <p>
+                            @Html.Raw(Model.Content.Replace(Environment.NewLine, "<br />"))
+                        </p>
+                    </div>
+                    <div class="blog__details__quote">
+                        <div class="icon"><i class="fa fa-film"></i></div>
+                        @if (!String.IsNullOrEmpty(Model.VideoPath))
+                        {
+                            <iframe width="779" height="438" src="@Model.VideoPath?autoplay=1&mute=1&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        }
+                        else
+                        {
+                            <p>
+                                Bài viết không có video
+                            </p>
+                        }
+                    </div>
+                    <div class="blog__details__tags">
+                        <a asp-action="Index" asp-controller="Article" asp-route-category="@Model.ArticleCategory.ArticleCatId">@Model.ArticleCategory.ArticleCatName</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="blog__sidebar">
+                    <div class="blog__sidebar__item">
+                        <div class="section-title">
+                            <h4>Danh mục</h4>
+                        </div>
+                        <ul>
+                            @foreach (var item in ViewBag.ArticleCategories)
+                            {
+                                <li><a asp-action="Index" asp-controller="Article" asp-route-category="@item.ArticleCatId">@item.ArticleCatName <span>(@ViewData[item.ArticleCatName + "Count"])</span></a></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="blog__sidebar__item">
+                        <div class="section-title">
+                            <h4>Bài viết cùng danh mục</h4>
+                        </div>
+                        @foreach (var item in ViewBag.RelatedArticles)
+                        {
+                            <a asp-action="Details" asp-controller="Article" asp-route-id="@item.ArticleId" class="blog__feature__item">
+                                <div class="blog__feature__item__pic">
+                                    <img src="@("/uploads/articleimg/" + item.ImagePath)" height="120" width="120" alt="">
+                                </div>
+                                <div class="blog__feature__item__text">
+                                    <h6>@item.Title</h6>
+                                    <span>Tác giả: @item.User.Fullname</span>
+                                    <span>Ngày đăng: @item.CreatedAt.ToString("dd/MM/yyyy")</span>
+                                </div>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Details Section End -->

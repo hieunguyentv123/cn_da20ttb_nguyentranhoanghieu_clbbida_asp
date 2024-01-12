@@ -1,0 +1,124 @@
+﻿@model IEnumerable<OrderDetail>;
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a asp-action="Index" asp-controller="Home"><i class="fa fa-home"></i> Trang chủ</a>
+                    <a asp-action="Index" asp-controller="OrderHistory">Lịch sử mua hàng</a>
+                    <span>Đơn hàng: @Model.First().Order.OrderId</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- Checkout Section Begin -->
+<section class="checkout spad">
+    <div class="container">
+        <form class="checkout__form">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5>Thông tin vận chuyển</h5>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="checkout__form__input">
+                                <p>Họ & tên người nhận: @Model.First().Order.Fullname</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="checkout__form__input">
+                                <p>Địa chỉ nhận hàng: @Model.First().Order.Address</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="checkout__form__input">
+                                <p>Số điện thoại: @Model.First().Order.Phone</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="checkout__form__input">
+                                <p>Email: @Model.First().Order.Email</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="checkout__form__input">
+                                <p>Tin nhắn: @Model.First().Order.Note</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="checkout__order">
+                        <h5>Thông tin thanh toán</h5>
+                        <div class="checkout__order__total">
+                            <ul>
+                                
+                                <li>Tổng tiền hàng: <span>@(Model.First().Order.TotalPrice.ToString("n0"))đ</span></li>
+                                <li>Phí vận chuyển: <span>0 đ</span></li>
+                                <li>Tổng thanh toán: <span>@(Model.First().Order.TotalPrice.ToString("n0"))đ</span></li>
+                                <li>Phương thức thanh toán: <span>@Model.First().Order.Payment.Method</span></li>
+                                <li>Tình trạng thanh toán: @if (Model.First().Order.IsPaid)
+                                    {
+                                        <span class="text-success">Đã thanh toán</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-danger">Chưa thanh toán</span>
+                                    }
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<section class="shop-cart spad">
+    <div class="container">
+        <h5 class="text-center mb-3">CHI TIẾT ĐƠN HÀNG</h5>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shop__cart__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Đơn giá</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                                <tr>
+                                    <td class="cart__product__item">
+                                        <img src="@("/uploads/product/" + item.Product.ProductImage)" height="100" width="100" alt="">
+                                        <div class="cart__product__item__title">
+                                            <h6>@item.Product.ProductName</h6>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price">@(item.SinglePrice.ToString("n0"))</td>
+                                    <td class="cart__quantity">@item.Quantity </td>
+                                    <td class="cart__total">@((item.Quantity*item.SinglePrice).ToString("n0"))</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Quay về trang chủ</a>
+    </div>
+</section>
+<!-- Shop Cart Section End -->
+<!-- Checkout Section End -->

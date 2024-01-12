@@ -1,0 +1,58 @@
+﻿﻿
+@{
+    ViewData["Title"] = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    int statusCode = (int)ViewBag.StatusCode;
+    switch (statusCode)
+    {
+        case 400:
+            ViewData["Icon"] = "fa fa-ban text-danger";
+            ViewData["Title"] = "Bad Request";
+            ViewData["Description"] = "Xin lỗi bạn, nhưng trình duyệt của bạn đã gửi một yêu cầu mà máy chủ này không thể hiểu được.";
+            break;
+        case 401:
+            ViewData["Icon"] = "fa fa-ban text-danger";
+            ViewData["Title"] = "Unauthorized";
+            ViewData["Description"] = "Xin lỗi bạn, nhưng trang yêu cầu xác thực để truy cập URL này.";
+            break;
+        case 403:
+            ViewData["Icon"] = "fa fa-exclamation-circle text-danger";
+            ViewData["Title"] = "Forbidden";
+            ViewData["Description"] = "Xin lỗi, nhưng bạn không có quyền truy cập trang này.";
+            break;
+        case 404:
+            ViewData["Icon"] = "fa fa-exclamation-circle text-danger";
+            ViewData["Title"] = "Page Not Found";
+            ViewData["Description"] = "Xin lỗi, nhưng không thể tìm thấy trang bạn đang tìm kiếm.";
+            break;
+        case 500:
+            ViewData["Icon"] = "fa fa-exclamation-circle text-danger";
+            ViewData["Title"] = "Internal Server Error";
+            ViewData["Description"] = "Chà, điều này thật đáng xấu hổ. Đã xảy ra lỗi khi xử lý yêu cầu của bạn. Hãy yên tâm, sự cố này đã được ghi lại và chúng tôi sẽ cố gắng khắc phục sự cố sớm nhất.";
+            break;
+        default:
+            ViewData["Icon"] = "fa fa-exclamation-circle text-danger";
+            ViewData["Title"] = "Unexpected Error";
+            ViewData["Description"] = "Chà, điều này thật đáng xấu hổ. Đã xảy ra lỗi khi xử lý yêu cầu của bạn. Hãy yên tâm, sự cố này đã được ghi lại và chúng tôi sẽ cố gắng khắc phục sự cố sớm nhất.";
+            break;
+    }
+}
+
+<!-- Error -->
+<div class="container-xxl container-p-y">
+    <div class="misc-wrapper text-center">
+        <h2 class="mb-2 mx-2">@ViewData["Title"]</h2>
+        <p class="mb-4 mx-2">Oops! 😖 @ViewData["Description"]</p>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Quay về trang chủ</a>
+        <div class="mt-3">
+            <img src="~/err.png"
+                 alt="Error"
+                 width="500"
+                 class="img-fluid"/>
+        </div>
+    </div>
+</div>
+<!-- /Error -->

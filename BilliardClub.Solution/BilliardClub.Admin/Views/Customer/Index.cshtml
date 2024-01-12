@@ -1,0 +1,125 @@
+﻿@model IPagedList<User>;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Khách hàng";
+    ViewData["Action"] = "Danh sách";
+    string name = "khách hàng";
+    int num = 0;
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card mb-0">
+            <div class="card-header">
+                <h3 class="mb-0 text-uppercase">Danh sách @name</h3>
+                <br />
+                <h4 class="h4 mb-0">Số khách hàng hiện có: @Model.TotalItemCount</h4>
+            </div>
+            <div class="card-body">
+
+                <form>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <input type="text" name="name" placeholder="Tên khách hàng..." class="form-control" />
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" name="username" placeholder="Tên tài khoản khách hàng..." class="form-control" />
+                        </div>
+                        <button type="submit" class="col-sm-2 btn btn-primary"><i class="fa fa-filter"></i> Lọc dữ liệu</button>
+                    </div>
+                </form>
+                <br />
+                <a asp-action="Create" asp-controller="Customer"><button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Thêm mới</button></a>
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table mb-0 ">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Ảnh đại diện</th>
+                                    <th>Tên tài khoản</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    num++;
+                                    <tr>
+                                        <th scope="row">@num</th>
+                                        <td>
+                                            @if (item.AvatarPath != null)
+                                            {
+                                                <img src="@("/uploads/avatar/" + item.AvatarPath)" alt="" width="50" height="50" class="rounded-circle">
+                                            }
+                                            else
+                                            {
+                                                <img src="~/assets/images/profile/user-1.jpg" alt="" width="50" height="50" class="rounded-circle">
+                                            }
+                                        </td>
+                                        <td style="width:100px !important">@item.Username</td>
+                                        <td>@item.Fullname</td>
+                                        <td>
+                                            @if (!item.IsLocked)
+                                            {
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <span class="badge bg-primary rounded-3 fw-semibold">Đang hoạt động</span>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <span class="badge bg-danger rounded-3 fw-semibold">Đang bị khoá</span>
+                                                </div>
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (item.IsLocked)
+                                            {
+                                                <a asp-action="ChangeStatus" asp-controller="Customer" asp-route-id="@item.UserId">
+                                                    <button type="submit" class="btn btn-dark"><i class="fa fa-unlock"></i></button>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a asp-action="ChangeStatus" asp-controller="Customer" asp-route-id="@item.UserId">
+                                                    <button type="submit" class="btn btn-dark"><i class="fa fa-lock"></i></button>
+                                                </a>
+                                            }
+                                            &nbsp&nbsp
+                                            <a asp-action="Details" asp-controller="Customer" asp-route-id="@item.UserId">
+                                                <button type="submit" class="btn btn-primary"><i class="fa fa-eye"></i></button>
+                                            </a>
+                                            <br /><br />
+                                            <a asp-action="Edit" asp-controller="Customer" asp-route-id="@item.UserId">
+                                                <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i></button>
+                                            </a>
+                                            &nbsp&nbsp
+                                            <a asp-action="Delete" asp-controller="Customer" asp-route-id="@item.UserId">
+                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br />
+                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                <nav aria-label="Page navigation">
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions(){
+                    DisplayLinkToIndividualPages = true,
+                    DisplayPageCountAndCurrentLocation = false,
+                    MaximumPageNumbersToDisplay = 10,
+                    LiElementClasses = new string[] { "page-item" },
+                    PageClasses = new string[] { "page-link" },
+                    })
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
